@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <input type="type" value = "texta7a" onfocus="this.value = 'a4a'" onblur = "this.value ='mmm'">
+        <!-- <input type="button" value = "a7aSubmit" onclick="document.forms[0].submit()">
+        <input type="button" value="a7aRest" onclick = "document.forms[0].reset()"> -->
+        <input type="reset" name="a7a naaaak" value="" id="">
+        <select name="countries" id="countries" multiple size = "5" >
+            <option value="1">Egypt</option>
+            <option value = "2">UAE</option>
+            <option value="3">EMA</option>
+        </select>
+    </form>
+    <button onclick = "display()">Display</button>
+    <div id="data"></div>
+    <div id="data2" onmouseover="fun(this.innerText)">HHHHHHHHH A7A</div>
+    <script type = "text/javascript">
+        document.forms[0].reset = function(){
+            alert("delete everything");
+        }
+       function display(){
+            var selected = document.getElementById("countries");
+            var length = selected.length;
+            console.log("length : "+ length);
+            document.getElementById("data").innerHTML = "";
+            for(let i = 0 ; i < length ; i++){
+                if(selected.options[i].selected == true){
+                    console.log("a7a");
+                    document.getElementById("data").innerHTML +="<br> " + selected.options[i].text;
+                    document.getElementById("data2").innerHTML +="<br> " + selected.options[i].value;
+                }
+            }
+       }
+
+       function fun(){
+            console.log("value is : " + arguments[0]);
+       }
+    </script>
+</body>
+</html>

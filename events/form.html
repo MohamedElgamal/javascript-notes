@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        *{
+            margin : 0px;
+            padding : 0px;
+        }
+        .container{
+            display:flex;
+        }
+        .container  > div{
+            flex-basis : 50%;
+        }
+        .container .right-side{
+            display : flex;
+            flex-direction: column;
+            align-items: center;
+            /* justify-content: center; */
+        }
+
+        .container .image img{
+            width : 100%;
+            height : calc(100vh - 5px);
+        }
+
+        .container .right-side .heading{
+            width : 60%;
+        }
+
+        .container .right-side .heading h2{
+            width : fit-content;
+            background-color: #290974;
+            padding : 10px 15px 10px;
+            color : white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin-top: 25px;
+        }
+
+        form{
+            width : 60%;
+        }
+
+        form input{
+            display: block;
+            margin : 20px 0px;
+            padding : 10px;
+            border-radius: 7px;
+            border : 2px solid #290974;
+            width : 100%;
+            font-weight: lighter;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 1.2em;
+            color : #5833af;
+        }
+
+        form input[type = "submit"]{
+            margin-left : 10px;
+            background-color: #500bf0;
+            font-family: 'Gill Sans', 'Gill Sans MT', "Calibri", 'Trebuchet MS', sans-serif;
+            color  :white;
+        }
+        form div{
+            display : flex;
+            align-items: center;
+        }
+        
+        form div input[type = "checkbox"]{
+            margin: 15px;
+            width : fit-content;
+        }
+
+        form div label{
+            color : rgb(99, 97, 97);
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="left-side">
+            <div class="image">
+                <img src="1.png" alt="">
+            </div>
+        </div>
+        <div class="right-side">
+            <div class="heading">
+                <h2>Register</h2>
+            </div>
+            <form onmousemove = "mouseCor(event)" onsubmit = "onSubmit(this , event)" action="https://192.168.1.1/">
+                <input type="text" value = "Name">
+                <input type="text" value = "Nickname">
+                <input type="text" value = "E-mail">
+                <input type="password" >
+                <input id = "submit"type="submit" value = "SIGN UP">
+                <div>
+                    <input type="checkbox" name = "terms" >
+                    <label for="terms" id="terms">I agree to the processing of my personal data in accordance with the personal Data Protection Act. I am informaed that I have the right access my data.</label>    
+                </div>
+                <input type="reset" value = reset>
+               </form>
+        </div>
+    </div>
+    <script type = "text/javascript">
+        function onSubmit(obj , event){
+            console.log(event.type)
+            console.log(event.target)
+            let result = confirm("Form Will Be Submitted Sure? ( Y / N ) ")
+            if(!result){
+                event.preventDefault();
+            }
+        }
+
+        function mouseCor(evt){
+            console.log(evt)
+        }
+
+    
+    </script>
+</body>
+</html>
